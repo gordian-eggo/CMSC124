@@ -1,5 +1,5 @@
 -module(ruz_exer05).
--export([factors/1, safety/0]).
+-export([factors/1, append/2, safety/0]).
 
 factors(1) -> 										% base case for recursion
 	Factor_List = [],
@@ -22,6 +22,13 @@ factors(N) ->										% print a list of all the factors of N
 			factors(N-1)
 	end.
 
+append([Head|Element], Tail) ->
+	[Head|append(Element, Tail)];
+append([], Tail) ->
+	Tail.
 
 safety()->
 	io:format("wag ibenta ang bayan bc u aint a pussy like aguinaldo.~n").
+
+% References:
+%	http://erlang.org/doc/efficiency_guide/listHandling.html
