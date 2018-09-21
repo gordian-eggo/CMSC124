@@ -13,7 +13,7 @@ factors(N) ->												% print a list of all the factors of N
 	if
 		Remainder == 0 ->
 			io:format("here~n"),
-			append([Factor_List], (N-1)),					% append the value of N-1 to the list
+			append([Factor_List], (N-1)),					% append the value of N-1 to the list, error here tho
 			io:format("factors: ~p~n", [Factor_List]),
 			factors(N-1);
 		Remainder =/= 0 ->
